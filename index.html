@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Who's Behind It?</title>
+  <title>Cine e în spate? / Who's Behind It?</title>
+  <meta name="description" content="Un quiz despre postările de știri din social media: e reală sau falsă și cine se află în spatele ei?">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Who's Behind It?</h1>
-    <button id="lang-btn" class="lang-btn">RO</button>
+  <header class="topbar">
+    <span class="wordmark" id="wordmark">Cine e în spate?</span>
+    <button id="lang-btn" class="lang-btn" type="button">EN</button>
   </header>
 
   <main id="app">
@@ -18,8 +22,9 @@
 
   <footer id="footer"></footer>
 
-  <!-- Order matters: data first, then the logic that uses it -->
+  <!-- Order matters: data and drawings first, then the logic that uses them -->
   <script src="data.js"></script>
+  <script src="media.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
