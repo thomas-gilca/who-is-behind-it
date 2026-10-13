@@ -35,6 +35,7 @@ const UI = {
     next: "Următoarea postare",
     seeResults: "Vezi rezultatul",
     illustration: "Ilustrație, nu imaginea originală din postare",
+    aiExample: "Exemplu recreat cu AI pentru acest quiz, nu imaginea originală din postare",
     result: (s, n) => `${s} din ${n}`,
     resultText: (s, n) =>
       s === n ? "Perfect. Nicio postare nu te-a păcălit."
@@ -48,7 +49,7 @@ const UI = {
       "Imaginile și clipurile pot fi generate cu AI: uită-te după detalii care nu se potrivesc."
     ],
     restart: "Încearcă din nou",
-    footer: "Proiect educațional. Postările sunt reformulate după verificări AFP și avertismente DNSC. Numele conturilor anonime și ale persoanelor private au fost înlocuite, iar imaginile sunt ilustrații proprii."
+    footer: "Proiect educațional. Postările sunt reformulate după verificări AFP și avertismente DNSC. Numele conturilor anonime și ale persoanelor private au fost înlocuite. Imaginile sunt ilustrații proprii sau exemple generate cu AI, marcate ca atare."
   },
   en: {
     title: "Who's behind it?",
@@ -71,6 +72,7 @@ const UI = {
     next: "Next post",
     seeResults: "See your result",
     illustration: "Illustration, not the original image from the post",
+    aiExample: "Example recreated with AI for this quiz, not the original image from the post",
     result: (s, n) => `${s} of ${n}`,
     resultText: (s, n) =>
       s === n ? "Perfect. No post fooled you."
@@ -84,7 +86,7 @@ const UI = {
       "Images and videos can be AI-generated: look for details that don't add up."
     ],
     restart: "Try again",
-    footer: "Educational project. Posts are rewritten from AFP fact-checks and DNSC warnings. Names of anonymous accounts and private persons have been replaced, and the images are our own illustrations."
+    footer: "Educational project. Posts are rewritten from AFP fact-checks and DNSC warnings. Names of anonymous accounts and private persons have been replaced. The images are our own illustrations or AI-generated examples, marked as such."
   }
 };
 

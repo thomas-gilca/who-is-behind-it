@@ -126,16 +126,23 @@ const SCENES = {
     <g fill="#C9CBDB"><rect x="96" y="136" width="128" height="6" rx="3"/><rect x="112" y="146" width="96" height="5" rx="2.5"/></g>`
 };
 
-// Wraps a scene as a photo, a video (play button + timer) or an ad.
+// Wraps a post's picture as a photo, a video (play button + timer) or an ad.
+// If the post has an "image" (an AI-generated example, already marked
+// "GENERAT CU AI" in its pixels) we show it; otherwise we show the drawing.
 function renderMedia(media) {
   if (!media || !SCENES[media.scene]) return "";
   const isVideo = media.kind === "video";
+  const picture = media.image
+    ? `<img src="${media.image}" alt="${media.alt[lang]}" loading="lazy">`
+    : `<svg viewBox="0 0 320 180" role="img" aria-label="${media.alt[lang]}" preserveAspectRatio="xMidYMid slice">
+        ${SCENES[media.scene]}
+      </svg>`;
   return `
     <figure class="media media-${media.kind}">
-      <svg viewBox="0 0 320 180" role="img" aria-label="${media.alt[lang]}" preserveAspectRatio="xMidYMid slice">
-        ${SCENES[media.scene]}
-      </svg>
-      ${isVideo ? `<span class="play" aria-hidden="true"></span><span class="duration">0:${media.seconds || 15}</span>` : ""}
-      <figcaption>${UI[lang].illustration}</figcaption>
+      <div class="media-frame">
+        ${picture}
+        ${isVideo ? `<span class="play" aria-hidden="true"></span><span class="duration">0:${media.seconds || 15}</span>` : ""}
+      </div>
+      <figcaption>${media.image ? UI[lang].aiExample : UI[lang].illustration}</figcaption>
     </figure>`;
 }

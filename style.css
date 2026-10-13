@@ -120,10 +120,12 @@ body[data-screen="start"] .wordmark { visibility: hidden; }
 
 /* ===== Illustrations inside posts ===== */
 .media { position: relative; margin: 0; }
-.media svg { display: block; width: 100%; height: auto; border-radius: 12px; }
+.media-frame { position: relative; }
+.media svg, .media img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.media-ad .media-frame { max-width: 300px; margin: 0 auto; }
 .media figcaption { font-size: 0.78rem; color: var(--muted); margin-top: 6px; }
 .play {
-  position: absolute; left: 50%; top: calc(50% - 12px);
+  position: absolute; left: 50%; top: 50%;
   width: 56px; height: 56px; margin: -28px 0 0 -28px;
   border-radius: 50%; background: rgba(255, 255, 255, 0.88);
 }
@@ -133,7 +135,7 @@ body[data-screen="start"] .wordmark { visibility: hidden; }
   border-top: 12px solid transparent; border-bottom: 12px solid transparent;
 }
 .duration {
-  position: absolute; right: 10px; bottom: 32px;
+  position: absolute; right: 10px; top: 10px;
   background: rgba(27, 26, 58, 0.8); color: #fff;
   font-size: 0.78rem; font-weight: 600; padding: 1px 7px; border-radius: 6px;
 }

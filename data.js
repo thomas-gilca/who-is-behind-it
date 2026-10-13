@@ -4,15 +4,10 @@
 // fact-check (AFP Verificat) or an official warning (DNSC).
 // Anonymous pages and private persons get generic names.
 //
-// TODO (Thomas): every "explanation" marked TODO must be written
-// with an AI tool, then checked against the fact-check in "link"
-// and documented in JURNAL-VERIFICARE.md.
+// Explanations: first draft by Gemini Flash, checked against the
+// sources and corrected (see JURNAL-VERIFICARE.md).
 // ============================================================
 
-const TODO = {
-  ro: "[TODO: explicație scrisă cu AI și verificată cu sursa]",
-  en: "[TODO: explanation written with AI and checked against the source]"
-};
 
 const POSTS = [
   {
@@ -25,7 +20,10 @@ const POSTS = [
     },
     isReal: true,
     media: { kind: "photo", scene: "ship-evacuation", alt: { ro: "Ilustrație: o navă de croazieră în port, pasageri coborând pe pasarelă", en: "Illustration: a cruise ship in port, passengers walking down the gangway" } },
-    explanation: TODO,
+    explanation: {
+      ro: "E reală: numele navei, locul și OMS se pot verifica imediat. Caută „MV Hondius hantavirus” și vei găsi aceeași informație la mai multe agenții de presă independente, ceea ce e un semn bun.",
+      en: "It's real: the ship's name, the place and the WHO can all be checked right away. Search for \"MV Hondius hantavirus\" and you'll find the same information from several independent news agencies, which is a good sign."
+    },
     source: {
       type: { ro: "Relatare de presă", en: "News report" },
       owner: { ro: "Agenție de presă (exemplu generic)", en: "News agency (generic example)" },
@@ -45,8 +43,11 @@ const POSTS = [
       en: "BEFORE and AFTER: Nepal's sacred river swept away an entire town. Bridges, houses, everything vanished in a single night. 💔"
     },
     isReal: false,
-    media: { kind: "collage", scene: "river-before-after", alt: { ro: "Ilustrație: colaj înainte și după cu un oraș pe malul unui râu", en: "Illustration: before-and-after collage of a riverside town" } },
-    explanation: TODO,
+    media: { kind: "collage", scene: "river-before-after", image: "images/river-before-after.jpg", alt: { ro: "Imagine generată cu AI: colaj înainte și după cu un oraș pe malul unui râu", en: "AI-generated image: before-and-after collage of a riverside town" } },
+    explanation: {
+      ro: "E falsă: inundațiile au fost reale, dar colajul a fost generat cu AI. Compară imaginile: distanța dintre poduri și poziția lor față de munte diferă, deși ar trebui să fie același loc. Un eveniment real poate fi ilustrat cu o imagine falsă.",
+      en: "It's fake: the floods were real, but the collage was generated with AI. Compare the two images: the distance between the bridges and their position relative to the mountain differ, even though it should be the same place. A real event can be illustrated with a fake image."
+    },
     source: {
       type: { ro: "Pagină de conținut viral", en: "Viral content page" },
       owner: { ro: "Necunoscut", en: "Unknown" },
@@ -66,8 +67,11 @@ const POSTS = [
       en: "🌋 SHOCKING FOOTAGE: Indonesia's Anak Krakatau volcano erupted right next to a neighbourhood! People are fleeing their homes, hundreds of thousands of passengers are stuck in airports. (video)"
     },
     isReal: false,
-    media: { kind: "video", scene: "volcano-town", seconds: 22, alt: { ro: "Ilustrație: un vulcan care erupe chiar în spatele unei străzi cu case", en: "Illustration: a volcano erupting right behind a street with houses" } },
-    explanation: TODO,
+    media: { kind: "video", scene: "volcano-town", image: "images/volcano-town.jpg", seconds: 22, alt: { ro: "Imagine generată cu AI: un vulcan care erupe chiar în spatele unei străzi cu case", en: "AI-generated image: a volcano erupting right behind a street with houses" } },
+    explanation: {
+      ro: "E falsă: Anak Krakatau e pe o insulă nelocuită, deci nu are niciun cartier lângă el. În clip, o persoană dispare brusc, iar mâinile celor care fug sunt deformate, semne tipice de video generat cu AI. Erupțiile au fost reale; amestecul de adevăr și fals face postarea convingătoare.",
+      en: "It's fake: Anak Krakatau is on an uninhabited island, so there is no neighbourhood next to it. In the clip, a person suddenly disappears and the hands of the people running are distorted, typical signs of AI-generated video. The eruptions were real; mixing truth and fiction is what makes the post convincing."
+    },
     source: {
       type: { ro: "Pagină care redistribuie clipuri virale", en: "Page reposting viral clips" },
       owner: { ro: "Necunoscut", en: "Unknown" },
@@ -88,7 +92,10 @@ const POSTS = [
     },
     isReal: true,
     media: { kind: "video", scene: "volcano-sea", seconds: 41, alt: { ro: "Ilustrație: un vulcan pe o insulă, văzut noaptea de pe o barcă de pescuit", en: "Illustration: a volcano on an island, seen at night from a fishing boat" } },
-    explanation: TODO,
+    explanation: {
+      ro: "E reală: detaliile se potrivesc cu geografia (vulcanul e pe o insulă și nu se vede de pe uscat), iar jurnaliștii AFP au vorbit direct cu autoarea. Compară cu postarea anterioară: aici nu apar case lângă vulcan.",
+      en: "It's real: the details match the geography (the volcano is on an island and can't be seen from land), and AFP journalists spoke directly to the author. Compare it with the previous post: here there are no houses next to the volcano."
+    },
     source: {
       type: { ro: "Martor direct (creatoare de conținut)", en: "Eyewitness (content creator)" },
       owner: { ro: "Persoană privată (nume înlocuit)", en: "Private person (name replaced)" },
@@ -108,8 +115,11 @@ const POSTS = [
       en: "Romanians have discovered how to earn thousands of lei a month from home, with zero risk. Read the full article on our news site! 👉"
     },
     isReal: false,
-    media: { kind: "ad", scene: "money-ad", alt: { ro: "Ilustrație: reclamă cu un telefon și promisiunea „+5.000 lei pe lună”", en: "Illustration: ad with a phone and the promise \"+5,000 lei a month\"" } },
-    explanation: TODO,
+    media: { kind: "ad", scene: "money-ad", image: "images/money-ad.jpg", alt: { ro: "Imagine generată cu AI: reclamă cu un telefon și promisiunea „+5.000 lei pe lună”", en: "AI-generated image: ad with a phone and the promise \"+5,000 lei a month\"" } },
+    explanation: {
+      ro: "E falsă: nicio investiție reală nu promite „mii de lei fără niciun risc”. Înainte să dai click, uită-te la adresa site-ului: escrocii copiază aspectul unor ziare cunoscute, dar pe alt domeniu. Nu completa date bancare pe un site la care ai ajuns dintr-o reclamă.",
+      en: "It's fake: no real investment promises \"thousands of lei with zero risk\". Before you click, look at the website address: scammers copy the look of well-known newspapers, but on a different domain. Never enter bank details on a site you reached through an ad."
+    },
     source: {
       type: { ro: "Pagină furată (compromisă)", en: "Hijacked (compromised) page" },
       owner: { ro: "Escroci necunoscuți", en: "Unknown scammers" },
@@ -129,8 +139,11 @@ const POSTS = [
       en: "Look closely at the photo: everyone wears protective suits, only the cameraman is in normal clothes. Hantavirus doesn't attack cameramen? It's all staged! (photo of an evacuation from a ship)"
     },
     isReal: false,
-    media: { kind: "photo", scene: "ship-cameraman", alt: { ro: "Ilustrație: oameni în costume de protecție și un cameraman în haine obișnuite", en: "Illustration: people in protective suits and a cameraman in normal clothes" } },
-    explanation: TODO,
+    media: { kind: "photo", scene: "ship-cameraman", image: "images/ship-cameraman.jpg", alt: { ro: "Imagine generată cu AI: oameni în costume de protecție și un cameraman în haine obișnuite", en: "AI-generated image: people in protective suits and a cameraman in normal clothes" } },
+    explanation: {
+      ro: "E falsă: fotografia nu are legătură cu hantavirusul. Prin căutare inversă de imagini, fact-checkerii au găsit-o într-un articol din 2025 despre un exercițiu medical într-un port din Spania. O poză veche, scoasă din context, nu dovedește că un eveniment real a fost „regizat”.",
+      en: "It's fake: the photo has nothing to do with hantavirus. Using a reverse image search, fact-checkers found it in a 2025 article about a medical drill in a Spanish port. An old photo taken out of context doesn't prove that a real event was \"staged\"."
+    },
     source: {
       type: { ro: "Pagină care răspândește teorii ale conspirației", en: "Page spreading conspiracy theories" },
       owner: { ro: "Necunoscut", en: "Unknown" },
@@ -151,7 +164,10 @@ const POSTS = [
     },
     isReal: false,
     media: { kind: "video", scene: "deepfake-video", seconds: 58, alt: { ro: "Ilustrație: un bărbat în costum, cu fața ușor distorsionată, care spune „Investește!”", en: "Illustration: a man in a suit with a slightly distorted face saying \"Invest!\"" } },
-    explanation: TODO,
+    explanation: {
+      ro: "E falsă: „îmbogățire peste noapte” și „locuri limitate” sunt tactici de presiune. Uită-te la buze (nu se potrivesc cu vocea), la fața rigidă și la ochii care nu clipesc natural. Caută videoclipul original pe canalele oficiale ale persoanei.",
+      en: "It's fake: \"get rich overnight\" and \"limited places\" are pressure tactics. Look at the lips (they don't match the voice), the stiff face and eyes that don't blink naturally. Look for the original video on the person's official channels."
+    },
     source: {
       type: { ro: "Reclamă frauduloasă cu deepfake", en: "Fraudulent deepfake ad" },
       owner: { ro: "Escroci necunoscuți", en: "Unknown scammers" },
@@ -172,7 +188,10 @@ const POSTS = [
     },
     isReal: true,
     media: { kind: "notice", scene: "official-warning", alt: { ro: "Ilustrație: un document oficial cu un scut verde", en: "Illustration: an official document with a green shield" } },
-    explanation: TODO,
+    explanation: {
+      ro: "E reală: mesajul nu îți cere bani sau date, ci te avertizează să nu le dai. Poți confirma direct pe dnsc.ro, unde există și un ghid despre deepfake.",
+      en: "It's real: the message doesn't ask you for money or data, it warns you not to give them. You can confirm it directly on dnsc.ro, which also has a guide on deepfakes."
+    },
     source: {
       type: { ro: "Instituție publică", en: "Public institution" },
       owner: { ro: "Statul român (DNSC)", en: "Romanian state (DNSC)" },
